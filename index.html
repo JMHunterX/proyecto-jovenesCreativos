@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CubeTrade | Inicio - Speedcubing en Colombia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-['Montserrat'] min-h-screen flex flex-col">
+  <header
+    class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        CUBE<span class="text-red-600">TRADE</span>
+      </a>
+      <nav class="hidden md:flex gap-8 font-medium">
+        <a href="index.html" class="text-red-600 dark:text-red-400">Inicio</a>
+        <a href="tienda.html" class="hover:text-red-600 transition">Tienda</a>
+        <a href="trade.html" class="hover:text-red-600 transition">Zona Trade 🇨🇴</a>
+        <a href="contacto.html" class="hover:text-red-600 transition">Contacto</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <button id="themeToggle"
+          class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          aria-label="Cambiar modo">
+          🌓
+        </button>
+        <a href="tienda.html"
+          class="bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition shadow-sm">Ver
+          Tienda</a>
+        <button id="openCartBtn"
+          class="relative p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          aria-label="Carrito de compras">
+          🛒
+          <span id="cartCount"
+            class="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center"
+            style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section
+    class="relative bg-gray-50 dark:bg-gray-800/50 py-24 border-b border-gray-200 dark:border-gray-800 text-center flex-grow flex flex-col justify-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">Lleva tus tiempos de Speedcubing al <span
+          class="text-red-600">siguiente nivel</span></h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">Los mejores cubos de competencia, lubricantes
+        profesionales y la primera comunidad de trueque de cubos en Colombia.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="tienda.html"
+          class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-red-600 dark:hover:bg-red-600 dark:hover:text-white px-8 py-3 rounded-lg font-semibold transition">Explorar
+          Catálogo</a>
+        <a href="trade.html"
+          class="border border-gray-300 dark:border-gray-700 hover:border-red-600 px-8 py-3 rounded-lg font-semibold transition">Ir
+          al Muro de Trades</a>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-gray-900 text-white text-center py-8 text-sm mt-16">
+    <p>&copy; 2026 CubeTrade Colombia. Todos los derechos reservados.</p>
+  </footer>
+  <div id="cartOverlay" class="fixed inset-0 bg-black/50 z-50 hidden transition-opacity"></div>
+  <div id="cartDrawer"
+    class="fixed top-0 right-0 h-full w-full max-w-md bg-white dark:bg-gray-900 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-6 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-gray-900 dark:text-white">Tu Carrito de Compras</h3>
+      <button id="closeCartBtn" class="text-gray-500 hover:text-red-600 text-xl font-bold">✕</button>
+    </div>
+    <div id="cartItemsContainer" class="p-6 flex-1 overflow-y-auto space-y-4">
+    </div>
+    <div class="p-6 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50">
+      <div class="flex justify-between items-center mb-4">
+        <span class="font-semibold text-gray-600 dark:text-gray-300">Total a Pagar:</span>
+        <span id="cartTotal" class="text-xl font-extrabold text-red-600 dark:text-red-400">$ 0 COP</span>
+      </div>
+      <button id="checkoutBtn"
+        class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 rounded-xl transition shadow-md">Finalizar
+        Compra por WhatsApp</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
