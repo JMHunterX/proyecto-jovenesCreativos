@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Modo Oscuro / Claro Global
     const themeToggleBtn = document.getElementById('themeToggle');
     const htmlElement = document.documentElement;
 
